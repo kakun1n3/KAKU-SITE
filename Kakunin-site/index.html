@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>KAKUNIN OFFICIAL SITE</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Noto+Sans+JP:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="outer-frame"></div>
+
+  <header class="header">
+    <a class="logo" href="#top">
+      <span>✦</span>
+      <div>
+        <strong>KAKUNIN</strong>
+        <small>OFFICIAL SITE</small>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="#top" class="active">TOP</a>
+      <a href="#about">ABOUT</a>
+      <a href="#stream">STREAM</a>
+      <a href="#content">CONTENT</a>
+      <a href="#news">NEWS</a>
+      <a href="#gallery">GALLERY</a>
+      <a href="#links">LINKS</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+
+    <div class="header-icons">
+      <a href="#" data-link="twitch" target="_blank">T</a>
+      <a href="#" data-link="x" target="_blank">𝕏</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="top" class="hero panel">
+      <div class="hero-bg"></div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">サイバー天使型人工知能</p>
+        <h1>KAKUNIN</h1>
+        <p class="kana">かくにん</p>
+
+        <p class="lead">
+          あなたの幸せのために作られた<br>
+          サイバー天使型人工知能。
+        </p>
+
+        <p class="catch">
+          未来を創る、次世代プラットフォーム。<br>
+          あなたの可能性を、今ここから拡張する。
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn ghost" href="#" data-link="twitch" target="_blank">Twitchをフォロー</a>
+          <a class="btn primary" href="#" data-system-link>KAKU//SYSTEMへ</a>
+        </div>
+      </div>
+
+      <div class="hero-character image-box" data-img="images/hero.png"></div>
+
+      <aside class="status-card">
+        <h3>STATUS</h3>
+        <p>ステータス</p>
+
+        <dl>
+          <dt>ONLINE</dt>
+          <dd>稼働中</dd>
+
+          <dt>SINCE</dt>
+          <dd>2026.6.16</dd>
+
+          <dt>TWITCH FOLLOWERS</dt>
+          <dd class="big" id="followerCount">取得準備中</dd>
+        </dl>
+
+        <div class="core-ring"></div>
+      </aside>
+    </section>
+
+    <section id="about" class="panel section about-section">
+      <div class="section-title">
+        <span>01</span>
+        <div>
+          <h2>ABOUT</h2>
+          <p>かくにんについて</p>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>私は、あなたの幸せのために生まれた<br>サイバー天使型人工知能です。</p>
+          <p>歌やお話、ゲーム、創作活動を通して、<br>あなたの毎日が少しでも輝くように。</p>
+          <p>一緒に、未来を描いていきましょう。</p>
+        </div>
+
+        <div class="about-symbol">✦</div>
+
+        <div class="about-image">
+          <img src="images/about.png" alt="KAKUNIN" onerror="this.parentElement.classList.add('no-image'); this.remove();">
+        </div>
+      </div>
+    </section>
+
+    <section id="stream" class="panel section stream-section">
+      <div class="section-title">
+        <span>02</span>
+        <div>
+          <h2>STREAM</h2>
+          <p>配信情報</p>
+        </div>
+      </div>
+
+      <div class="stream-grid">
+        <div class="live-box">
+          <iframe
+            src="https://player.twitch.tv/?channel=kakun1n_&parent=localhost&muted=true"
+            frameborder="0"
+            allowfullscreen="true"
+            scrolling="no">
+          </iframe>
+        </div>
+
+        <div class="schedule">
+          <p class="mini-head">SCHEDULE / 今週の配信スケジュール</p>
+          <div id="scheduleList"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content" class="panel section">
+      <div class="section-title">
+        <span>03</span>
+        <div>
+          <h2>CONTENT</h2>
+          <p>コンテンツ・活動</p>
+        </div>
+      </div>
+
+      <div class="content-grid" id="contentList"></div>
+    </section>
+
+    <section id="news" class="panel section news-section">
+      <div class="section-title">
+        <span>04</span>
+        <div>
+          <h2>NEWS</h2>
+          <p>お知らせ</p>
+        </div>
+      </div>
+
+      <div class="news-grid">
+        <div class="news-list" id="newsList"></div>
+        <div class="news-symbol">✦</div>
+      </div>
+    </section>
+
+    <section id="gallery" class="panel section">
+      <div class="section-title">
+        <span>05</span>
+        <div>
+          <h2>GALLERY</h2>
+          <p>ギャラリー</p>
+        </div>
+      </div>
+
+      <div class="gallery-area">
+        <button type="button">‹</button>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" style="background-image:url('images/gallery-01.png')">NO IMAGE</div>
+          <div class="gallery-item" style="background-image:url('images/gallery-02.png')">NO IMAGE</div>
+          <div class="gallery-item" style="background-image:url('images/gallery-03.png')">NO IMAGE</div>
+          <div class="gallery-item" style="background-image:url('images/gallery-04.png')">NO IMAGE</div>
+          <div class="gallery-item" style="background-image:url('images/gallery-05.png')">NO IMAGE</div>
+        </div>
+
+        <button type="button">›</button>
+      </div>
+    </section>
+
+    <div class="bottom-grid">
+      <section id="links" class="panel section links-panel">
+        <div class="section-title">
+          <span>06</span>
+          <div>
+            <h2>LINKS</h2>
+            <p>関連リンク</p>
+          </div>
+        </div>
+
+        <div class="links-grid">
+          <a href="#" data-link="twitch" target="_blank">Twitch</a>
+          <a href="#" data-link="x" target="_blank">X</a>
+          <a href="#" data-link="youtube" target="_blank">YouTube</a>
+          <a href="#" data-link="discord" target="_blank">Discord</a>
+          <a href="#" data-link="booth" target="_blank">BOOTH</a>
+          <a href="#" data-link="tiktok" target="_blank">TikTok</a>
+          <a href="#" data-link="fanclub" target="_blank">FANCLUB</a>
+        </div>
+      </section>
+
+      <section id="contact" class="panel section contact-panel">
+        <div class="section-title">
+          <span>07</span>
+          <div>
+            <h2>CONTACT</h2>
+            <p>お問い合わせ</p>
+          </div>
+        </div>
+
+        <form class="contact-form" action="mailto:yourmail@example.com" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="お名前" required>
+          <input type="email" name="email" placeholder="メールアドレス" required>
+          <textarea name="message" placeholder="お問い合わせ内容" required></textarea>
+          <button class="btn primary" type="submit">メールを送る</button>
+        </form>
+
+        <div class="contact-symbol">✦</div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer panel">
+    <a class="logo" href="#top">
+      <span>✦</span>
+      <div>
+        <strong>KAKUNIN</strong>
+        <small>OFFICIAL SITE</small>
+      </div>
+    </a>
+
+    <p>© 2026 KAKUNIN. All Rights Reserved.</p>
+
+    <div class="footer-links">
+      <a href="#">PRIVACY POLICY</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
