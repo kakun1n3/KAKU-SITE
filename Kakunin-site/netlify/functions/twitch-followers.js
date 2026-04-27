@@ -4,6 +4,7 @@ exports.handler = async function () {
   const broadcasterId = process.env.TWITCH_BROADCASTER_ID;
 
   try {
+    // トークン取得
     const tokenRes = await fetch("https://id.twitch.tv/oauth2/token", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -16,7 +17,8 @@ exports.handler = async function () {
 
     const tokenData = await tokenRes.json();
 
-    const followersRes = await fetch(
+    // フォロワー取得
+    const res = await fetch(
       `https://api.twitch.tv/helix/channels/followers?broadcaster_id=${broadcasterId}`,
       {
         headers: {
@@ -26,20 +28,16 @@ exports.handler = async function () {
       }
     );
 
-    const followersData = await followersRes.json();
+    const data = await res.json();
 
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        total: followersData.total ?? null,
-      }),
+      body: JSON.stringify({ total: data.total }),
     };
-  } catch (error) {
+  } catch (e) {
     return {
       statusCode: 500,
-      body: JSON.stringify({
-        error: "Failed to fetch Twitch followers",
-      }),
+      body: JSON.stringify({ error: "failed" }),
     };
   }
 };
