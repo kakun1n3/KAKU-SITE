@@ -1,0 +1,124 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"Noto Sans JP",sans-serif;
+  background:
+    radial-gradient(circle at top,rgba(80,170,255,0.3),transparent),
+    linear-gradient(#f5fbff,#e9f5ff);
+  color:#07306f;
+}
+
+/* 枠 */
+.frame{
+  position:fixed;
+  inset:10px;
+  border:1px solid rgba(80,160,255,0.5);
+  box-shadow:0 0 20px rgba(80,160,255,0.2);
+  pointer-events:none;
+}
+
+/* メイン */
+.system{
+  display:grid;
+  grid-template-columns: 1fr 400px;
+  gap:40px;
+  padding:80px;
+}
+
+/* 左 */
+.hero h1{
+  font-family:"Orbitron";
+  font-size:64px;
+  color:#147dff;
+}
+
+.kana{
+  margin-top:8px;
+}
+
+.copy{
+  margin-top:30px;
+  line-height:2;
+  font-weight:700;
+}
+
+.hero-btns{
+  margin-top:30px;
+}
+
+.btn{
+  padding:12px 20px;
+  margin-right:10px;
+  border:1px solid #1e9aff;
+  cursor:pointer;
+}
+
+.btn.primary{
+  background:#1e9aff;
+  color:white;
+}
+
+.btn.ghost{
+  background:white;
+}
+
+/* 右ログイン */
+.login{
+  padding:30px;
+  border:1px solid rgba(80,160,255,0.5);
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(10px);
+}
+
+.login h2{
+  font-family:"Orbitron";
+}
+
+.login-btn{
+  width:100%;
+  margin:10px 0;
+  padding:12px;
+  border:none;
+  cursor:pointer;
+}
+
+.discord{background:#5865f2;color:white;}
+.twitch{background:#9146ff;color:white;}
+
+.or{
+  text-align:center;
+  margin:10px 0;
+}
+
+input{
+  width:100%;
+  margin:6px 0;
+  padding:10px;
+}
+
+.login-main{
+  width:100%;
+  margin-top:10px;
+  padding:12px;
+  background:#1e9aff;
+  color:white;
+  border:none;
+}
+
+/* 下 */
+.dashboard{
+  display:grid;
+  grid-template-columns: repeat(5,1fr);
+  gap:20px;
+  padding:40px;
+}
+
+.card{
+  padding:20px;
+  border:1px solid rgba(80,160,255,0.4);
+  background:white;
+}
