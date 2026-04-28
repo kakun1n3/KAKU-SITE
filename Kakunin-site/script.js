@@ -110,3 +110,51 @@ document.querySelectorAll(".gallery-item").forEach((item) => {
     item.textContent = "NO IMAGE";
   }
 });
+
+async function loadTwitchStatus() {
+  const liveStatus = document.getElementById("liveStatus");
+  const liveGame = document.getElementById("liveGame");
+  const liveBadge = document.getElementById("liveBadge");
+  const liveTitle = document.getElementById("liveTitle");
+  const liveViewers = document.getElementById("liveViewers");
+
+  try {
+    const res = await fetch("/.netlify/functions/twitch-status");
+    const data = await res.json();
+
+    if (data.isLive) {
+      if (liveStatus) liveStatus.textContent = "LIVE NOW";
+      if (liveGame) liveGame.textContent = data.game || "配信中";
+
+      if (liveBadge) {
+        liveBadge.textContent = "● LIVE NOW";
+        liveBadge.classList.add("is-live");
+      }
+
+      if (liveTitle) liveTitle.textContent = data.title || "配信中";
+
+      if (liveViewers) {
+        liveViewers.textContent = `${Number(data.viewerCount).toLocaleString()} viewers`;
+      }
+    } else {
+      if (liveStatus) liveStatus.textContent = "OFFLINE";
+      if (liveGame) liveGame.textContent = "OFFLINE";
+
+      if (liveBadge) {
+        liveBadge.textContent = "○ OFFLINE";
+        liveBadge.classList.remove("is-live");
+      }
+
+      if (liveTitle) liveTitle.textContent = "現在はオフラインです";
+      if (liveViewers) liveViewers.textContent = "次回配信をお待ちください";
+    }
+  } catch (error) {
+    if (liveStatus) liveStatus.textContent = "ERROR";
+    if (liveGame) liveGame.textContent = "---";
+    if (liveBadge) liveBadge.textContent = "ERROR";
+    if (liveTitle) liveTitle.textContent = "配信情報を取得できませんでした";
+    if (liveViewers) liveViewers.textContent = "---";
+  }
+}
+
+loadTwitchStatus();
