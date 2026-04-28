@@ -1,4 +1,3 @@
-<!-- update -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -67,23 +66,26 @@
 
       <div class="hero-character image-box" data-img="images/hero.png"></div>
 
-      <aside class="status-card">
-        <h3>STATUS</h3>
-        <p>ステータス</p>
+     <aside class="status-card">
+  <h3>STATUS</h3>
+  <p>ステータス</p>
 
-        <dl>
-          <dt>ONLINE</dt>
-          <dd>稼働中</dd>
+  <dl>
+    <dt>STREAM STATUS</dt>
+    <dd id="liveStatus">CHECKING...</dd>
 
-          <dt>SINCE</dt>
-          <dd>2026.6.16</dd>
+    <dt>NOW PLAYING</dt>
+    <dd id="liveGame">---</dd>
 
-          <dt>TWITCH FOLLOWERS</dt>
-          <dd class="big" id="followerCount">取得準備中</dd>
-        </dl>
+    <dt>SINCE</dt>
+    <dd>2026.6.16</dd>
 
-        <div class="core-ring"></div>
-      </aside>
+    <dt>TWITCH FOLLOWERS</dt>
+    <dd class="big" id="followerCount">取得準備中</dd>
+  </dl>
+
+  <div class="core-ring"></div>
+</aside> 
     </section>
 
     <section id="about" class="panel section about-section">
@@ -111,30 +113,36 @@
     </section>
 
     <section id="stream" class="panel section stream-section">
-      <div class="section-title">
-        <span>02</span>
-        <div>
-          <h2>STREAM</h2>
-          <p>配信情報</p>
-        </div>
+  <div class="section-title">
+    <span>02</span>
+    <div>
+      <h2>STREAM</h2>
+      <p>配信情報</p>
+    </div>
+  </div>
+
+  <div class="stream-grid">
+    <div class="live-box">
+      <iframe
+        src="https://player.twitch.tv/?channel=kakun1n_&parent=localhost&muted=true"
+        frameborder="0"
+        allowfullscreen="true"
+        scrolling="no">
+      </iframe>
+    </div>
+
+    <div class="schedule">
+      <div class="live-info">
+        <p id="liveBadge">CHECKING</p>
+        <h3 id="liveTitle">配信情報を取得中...</h3>
+        <span id="liveViewers">---</span>
       </div>
 
-      <div class="stream-grid">
-        <div class="live-box">
-          <iframe
-            src="https://player.twitch.tv/?channel=kakun1n_&parent=localhost&muted=true"
-            frameborder="0"
-            allowfullscreen="true"
-            scrolling="no">
-          </iframe>
-        </div>
-
-        <div class="schedule">
-          <p class="mini-head">SCHEDULE / 今週の配信スケジュール</p>
-          <div id="scheduleList"></div>
-        </div>
-      </div>
-    </section>
+      <p class="mini-head">SCHEDULE / 今週の配信スケジュール</p>
+      <div id="scheduleList"></div>
+    </div>
+  </div>
+</section>
 
     <section id="content" class="panel section">
       <div class="section-title">
