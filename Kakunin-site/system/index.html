@@ -1,214 +1,72 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KAKU//SYSTEM</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KAKU//SYSTEM</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Noto+Sans+JP:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      min-height: 100vh;
-      font-family: "Noto Sans JP", sans-serif;
-      color: #07306f;
-      background:
-        radial-gradient(circle at 50% 20%, rgba(60, 170, 255, 0.32), transparent 32%),
-        linear-gradient(180deg, #f8fcff, #eaf7ff);
-      overflow: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        linear-gradient(135deg, rgba(0,119,255,0.055) 25%, transparent 25%) 0 0 / 34px 34px,
-        radial-gradient(circle, rgba(0,153,255,0.14) 1px, transparent 1px) 0 0 / 32px 32px;
-      pointer-events: none;
-    }
-
-    .frame {
-      position: fixed;
-      inset: 12px;
-      border: 1px solid rgba(80, 160, 255, 0.45);
-      box-shadow:
-        inset 0 0 32px rgba(80,170,255,0.22),
-        0 0 24px rgba(80,170,255,0.15);
-      pointer-events: none;
-    }
-
-    .system {
-      position: relative;
-      width: min(1200px, calc(100% - 40px));
-      min-height: calc(100vh - 40px);
-      margin: 20px auto;
-      padding: 42px;
-      display: grid;
-      place-items: center;
-    }
-
-    .panel {
-      position: relative;
-      width: 100%;
-      max-width: 980px;
-      padding: 70px 60px;
-      text-align: center;
-      border: 1px solid rgba(70,150,255,0.42);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.88), rgba(225,245,255,0.62)),
-        radial-gradient(circle at 50% 0%, rgba(80,170,255,0.22), transparent 38%);
-      backdrop-filter: blur(18px);
-      box-shadow:
-        inset 0 0 30px rgba(80,170,255,0.12),
-        0 0 46px rgba(60,150,255,0.2);
-      overflow: hidden;
-    }
-
-    .panel::before {
-      content: "";
-      position: absolute;
-      inset: 12px;
-      border: 1px solid rgba(80,160,255,0.18);
-      pointer-events: none;
-    }
-
-    .mark {
-      font-size: 54px;
-      color: #168bff;
-      text-shadow: 0 0 24px rgba(0,140,255,0.65);
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-family: "Orbitron", sans-serif;
-      font-size: clamp(42px, 7vw, 88px);
-      letter-spacing: 6px;
-      color: #147dff;
-      text-shadow: 0 0 34px rgba(40,140,255,0.38);
-    }
-
-    .kana {
-      margin-top: 12px;
-      letter-spacing: 10px;
-      font-weight: 800;
-      color: #235d9f;
-    }
-
-    .copy {
-      margin: 42px auto 0;
-      max-width: 720px;
-      line-height: 2.2;
-      font-weight: 800;
-      font-size: 16px;
-    }
-
-    .buttons {
-      margin-top: 46px;
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    .btn {
-      min-width: 220px;
-      padding: 16px 28px;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid rgba(65,150,255,0.4);
-      border-radius: 4px;
-      font-weight: 900;
-      color: #147dff;
-      background: rgba(255,255,255,0.76);
-      box-shadow: 0 0 20px rgba(60,150,255,0.16);
-      transition: 0.25s;
-    }
-
-    .btn.primary {
-      color: #fff;
-      background: linear-gradient(135deg, #1e9aff, #0063ff);
-      border-color: transparent;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 34px rgba(40,140,255,0.34);
-    }
-
-    .status {
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-family: "Orbitron", sans-serif;
-      font-size: 12px;
-      color: #2c6dad;
-    }
-
-    .status span {
-      padding: 8px 16px;
-      border: 1px solid rgba(65,150,255,0.28);
-      background: rgba(255,255,255,0.62);
-    }
-
-    @media (max-width: 600px) {
-      .panel {
-        padding: 50px 24px;
-      }
-
-      h1 {
-        letter-spacing: 3px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Noto+Sans+JP:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="system.css">
 </head>
 
 <body>
-  <div class="frame"></div>
 
-  <main class="system">
-    <section class="panel">
-      <div class="mark">✦</div>
+<div class="frame"></div>
 
-      <h1>KAKU//SYSTEM</h1>
-      <p class="kana">かくにんシステム</p>
+<main class="system">
 
-      <div class="copy">
-        <p>KAKU//SYSTEMへようこそ。</p>
-        <p>ここは、かくにんとあなたを繋ぐために構築された拡張領域。</p>
-        <p>あなたの行動はデータとなり、ポイントとして蓄積され、新たな体験へと変換されていきます。</p>
-        <p>観測するだけの存在から、接続し、干渉する存在へ。</p>
-        <p>——このシステムに、アクセスしますか？</p>
-      </div>
+  <!-- 左 -->
+  <section class="hero">
 
-      <div class="buttons">
-        <a class="btn primary" href="#">ACCESS</a>
-        <a class="btn" href="../index.html">OFFICIAL SITEへ戻る</a>
-      </div>
+    <h1>KAKU//SYSTEM</h1>
+    <p class="kana">かくにんシステム</p>
 
-      <div class="status">
-        <span>STATUS：ONLINE</span>
-        <span>SYSTEM：CONNECTED</span>
-        <span>VERSION：0.1.0</span>
-      </div>
-    </section>
-  </main>
+    <div class="copy">
+      <p>KAKU//SYSTEMへようこそ。</p>
+      <p>ここは、かくにんとあなたを繋ぐために構築された拡張領域。</p>
+      <p>あなたの行動はデータとなり、ポイントとして蓄積され、</p>
+      <p>新たな体験へと変換されていきます。</p>
+      <p>観測するだけの存在から、接続し、干渉する存在へ。</p>
+      <p>——このシステムに、アクセスしますか？</p>
+    </div>
+
+    <div class="hero-btns">
+      <a class="btn ghost">Twitchでログイン</a>
+      <a class="btn primary">KAKU//SYSTEMへ</a>
+    </div>
+
+  </section>
+
+  <!-- 右 -->
+  <aside class="login">
+
+    <h2>LOGIN</h2>
+    <p class="sub">KAKU//SYSTEMへログイン</p>
+
+    <button class="login-btn discord">Discordでログイン</button>
+    <button class="login-btn twitch">Twitchでログイン</button>
+
+    <div class="or">or</div>
+
+    <input type="text" placeholder="メールアドレス">
+    <input type="password" placeholder="パスワード">
+
+    <button class="login-main">ログイン</button>
+
+  </aside>
+
+</main>
+
+<!-- 下パネル -->
+<section class="dashboard">
+
+  <div class="card">STREAM STATUS</div>
+  <div class="card">FOLLOWERS</div>
+  <div class="card">KLYX POINT</div>
+  <div class="card">SCHEDULE</div>
+  <div class="card">SYSTEM MENU</div>
+
+</section>
+
 </body>
 </html>
